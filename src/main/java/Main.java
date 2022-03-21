@@ -13,6 +13,6 @@ public class Main {
         searchPage.SendText("ololo");
         searchPage.ClickSearchButton();
         System.out.println(Browser.GetURL());
-        BrowserFactory.Instance().CloseBrowser();
+        //BrowserFactory.Instance().CloseBrowser();
     }
 }
