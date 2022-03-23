@@ -1,20 +1,22 @@
 package POM;
 
-import Driver.Browser;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class SearchPage {
-    WebElement inputSearch = Browser.Get().findElement(By.xpath("//input[@spellcheck='false']"));
-    WebElement clickSearch = Browser.Get().findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[@role='button']"));
+    @FindBy(xpath = "//input[@spellcheck='false']")
+    WebElement inputSearch;
 
-    public void SendText(String text){
-        inputSearch.sendKeys("ololo");
-        inputSearch.sendKeys(Keys.TAB);
+    @FindBy(xpath = "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[@role='button']")
+    WebElement clickSearch;
+
+    public void clickElement(){
+        clickSearch.click();
     }
 
-    public void ClickSearchButton() {
-        clickSearch.click();
+    public void sendText(String text){
+        inputSearch.sendKeys(text);
+        inputSearch.sendKeys(Keys.TAB);
     }
 }

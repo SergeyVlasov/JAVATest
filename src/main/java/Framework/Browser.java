@@ -1,4 +1,4 @@
-package Driver;
+package Framework;
 
 import org.openqa.selenium.WebDriver;
 
