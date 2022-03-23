@@ -12,4 +12,7 @@ public class Browser {
     public static String GetURL(){
         return BrowserFactory.Instance().GetBrowser().getCurrentUrl();
     }
+    public static void Close(){
+        BrowserFactory.Instance().CloseBrowser();
+    }
 }
