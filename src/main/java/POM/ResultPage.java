@@ -1,12 +1,19 @@
 package POM;
 
-import Framework.Browser;
-import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class ResultPage {
-    String xpathAllResultsLink = "//div[@class='hdtb-mitem hdtb-msel']";
+    @FindBy(xpath = "//div[@class='hdtb-mitem hdtb-msel']")
+    WebElement allResultsLink;
 
     public boolean allResultsLinkExist() {
-        return Browser.Get().findElements(By.xpath(xpathAllResultsLink)).size() > 0;
+        try {
+            allResultsLink.getTagName();
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 }
