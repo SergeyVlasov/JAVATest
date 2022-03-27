@@ -15,11 +15,7 @@ public class TestGoogle {
 
     @DataProvider(name="text")
     public static Iterator<Object[]> dbData() throws IOException {
-        //return new Object[][] {
-        //        {"ololoe"},
-        //        {"pololoe"}
-        //};
-        return DataReader.readCsv();
+        return DataReader.readCsv("TestData.csv");
     }
 
     @BeforeMethod

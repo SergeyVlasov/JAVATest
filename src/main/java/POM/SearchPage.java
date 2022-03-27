@@ -8,7 +8,7 @@ public class SearchPage {
     @FindBy(xpath = "//input[@spellcheck='false']")
     WebElement inputSearch;
 
-    @FindBy(xpath = "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[@role='button']")
+    @FindBy(xpath = "/html/body//form//div[3]/center/input[@role='button']")
     WebElement clickSearch;
 
     public void clickElement(){
