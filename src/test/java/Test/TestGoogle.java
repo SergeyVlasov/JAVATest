@@ -13,7 +13,7 @@ import java.util.Iterator;
 
 public class TestGoogle {
 
-    @DataProvider(name="text")
+    @DataProvider(name="text", parallel=true)
     public static Iterator<Object[]> dbData() throws IOException {
         return DataReader.readCsv("TestData.csv");
     }
