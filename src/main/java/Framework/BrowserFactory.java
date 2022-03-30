@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrowserFactory {
     private static BrowserFactory instance = null;
-    private WebDriver driver;
+    private WebDriver driver = null;
 
     public static BrowserFactory Instance(){
         if (instance == null){
@@ -15,16 +15,8 @@ public class BrowserFactory {
         return instance;
     }
 
-    public static synchronized BrowserFactory getInstance() {
-        if (instance == null) {
-            instance = new BrowserFactory();
-        }
-        return instance;
-    }
-
     public WebDriver GetBrowser(){
         if (driver == null){
-            WebDriver driver;
             WebDriverManager.chromedriver().setup();
             this.driver = new ChromeDriver();
         }
