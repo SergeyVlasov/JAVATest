@@ -13,7 +13,8 @@ import java.util.Iterator;
 
 public class TestGoogle {
 
-    @DataProvider(name="text", parallel=true)
+    //@DataProvider(name="text", parallel=true)
+    @DataProvider(name="text")
     public static Iterator<Object[]> dbData() throws IOException {
         return DataReader.readCsv("TestData.csv");
     }
@@ -29,10 +30,10 @@ public class TestGoogle {
     public void test1(String txt)
     {
         Browser.GoToURL("https://google.com");
-        SearchPage searchPage = PageFactory.initElements(Browser.Get(), SearchPage.class);
+        SearchPage searchPage = new SearchPage();
         searchPage.sendText(txt);
         searchPage.clickElement();
-        ResultPage resultPage = PageFactory.initElements(Browser.Get(), ResultPage.class);
+        ResultPage resultPage = new ResultPage();
         Assert.assertTrue(resultPage.allResultsLinkExist(), "result page did not not load");
     }
 
