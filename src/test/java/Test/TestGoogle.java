@@ -31,8 +31,9 @@ public class TestGoogle {
     {
         Browser.GoToURL("https://google.com");
         SearchPage searchPage = new SearchPage();
-        searchPage.sendText(txt);
-        searchPage.clickElement();
+        searchPage
+                .sendText(txt)
+                .clickElement();
         ResultPage resultPage = new ResultPage();
         Assert.assertTrue(resultPage.allResultsLinkExist(), "result page did not not load");
     }

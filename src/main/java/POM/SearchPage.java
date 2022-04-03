@@ -21,8 +21,9 @@ public class SearchPage {
         clickSearch.click();
     }
 
-    public void sendText(String text){
+    public SearchPage sendText(String text){
         inputSearch.sendKeys(text);
         inputSearch.sendKeys(Keys.TAB);
+        return this;
     }
 }
