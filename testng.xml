@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test name="Test.TestGoogle">
-        <packages>
-            <package name="Test"></package>
-        </packages>
+        <classes>
+            <class name="Runners.Run"/>
+        </classes>
     </test>
 </suite>
