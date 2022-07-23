@@ -11,19 +11,12 @@ import org.testng.annotations.*;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class TestGoogle {
+public class TestGoogle extends BaseTest {
 
     //@DataProvider(name="text", parallel=true)
     @DataProvider(name="text")
     public static Iterator<Object[]> dbData() throws IOException {
         return DataReader.readCsv("TestData.csv");
-    }
-
-    @BeforeMethod
-    public void beforeTest()
-    {
-        System.out.println("beforeTest");
-        Browser.Get();
     }
 
     @Test (dataProvider = "text")
@@ -36,12 +29,5 @@ public class TestGoogle {
                 .clickElement();
         ResultPage resultPage = new ResultPage();
         Assert.assertTrue(resultPage.allResultsLinkExist(), "result page did not not load");
-    }
-
-    @AfterMethod
-    public void afterTest()
-    {
-        System.out.println("afterTest");
-        Browser.Close();
     }
 }
