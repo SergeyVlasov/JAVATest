@@ -13,12 +13,6 @@ import java.util.Iterator;
 
 public class TestGoogle extends BaseTest {
 
-    //@DataProvider(name="text", parallel=true)
-    @DataProvider(name="text")
-    public static Iterator<Object[]> dbData() throws IOException {
-        return DataReader.readCsv("TestData.csv");
-    }
-
     @Test (dataProvider = "text")
     public void test1(String txt)
     {
